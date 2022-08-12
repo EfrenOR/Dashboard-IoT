@@ -1,173 +1,184 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;600&family=Josefin+Slab:wght@700&display=swap');
 
 :root{
-    --main-gradient:radial-gradient(circle, rgba(125,155,245,0.7) 0%, rgba(125,155,245,0.21) 100%);
-    --btn-gradient-red:-webkit-radial-gradient(top left, rgba(245, 125, 125, .70), rgba(245, 125, 125, .21));
-    --btn-gradient-green:-webkit-radial-gradient(top left, rgba(125,245,137,0.7), rgba(149,245,125,0.21));
-    --btn-gradient-blue:-webkit-radial-gradient(top left, rgba(125,155,245,.70), rgba(125,155,245,0.21));
-    --main-color : #7D9BF5;
+   --main-gradient:radial-gradient(circle, rgba(125,155,245,0.7) 0%, rgba(125,155,245,0.21) 100%);
+   --btn-gradient-red:-webkit-radial-gradient(top left, rgba(245, 125, 125, .70), rgba(245, 125, 125, .21));
+   --btn-gradient-green:-webkit-radial-gradient(top left, rgba(125,245,137,0.7), rgba(149,245,125,0.21));
+   --btn-gradient-blue:-webkit-radial-gradient(top left, rgba(125,155,245,.70), rgba(125,155,245,0.21));
+
 }
 
 
 /*SETTINGS*/
 *{
-    box-sizing: border-box;
-
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
 }
 
 html{
-    font-size: 16px;
-    overflow-x: hidden;
+   font-size: 16px;
+   overflow-x: hidden;
 }
 
 body{
-    background-color: #E6EEF4;
-    font-family:'Hind Madurai', sans-serif;
+   background-color: #E6EEF4;
+   font-family:'Hind Madurai', sans-serif;
 }
 
 button{
-    border: none;
-    outline: none;
-    padding:.7em 1em;
-    border-radius: 0.5em;
-    margin: 0.2em;
-    box-shadow: 0 0.25em 0.3em rgba(0, 0, 0, 0.30);
-    transition: all 0.3s ease;
+   border: none;
+   outline: none;
+   padding:.7em 1em;
+   border-radius: 0.5em;
+   margin: 0.2em;
+   box-shadow: 0 0.25em 0.3em rgba(0, 0, 0, 0.30);
+   transition: all 0.3s ease;
 }
 
 button:hover{
-    transform: scale(.95);
-    cursor:pointer;
+   transform: scale(.95);
+   cursor:pointer;
 }
+
+.home-section{
+   margin: 0;
+   position: relative;
+   min-height: 100vh;
+   left: 18.75em;
+   width: calc(100% - 18.75em);
+   top: 0;
+   transition: all 0.4s ease;
+   z-index: 2;
+ }
+
+ .menu .nav-container.closeNavbar ~ .home-section{
+   left: 4.5em;
+   width: calc(100% - 4.5em);
+ }
 
 /*HEADER - STYLES*/
 .header figure{
-    margin-left: 0;
+   margin-left: 0;
 }
 
 img{
-    max-width: 100%;
-    height: auto;
+   max-width: 100%;
+   height: auto;
 }
 
 figure{
-    display: inline-block;
-    height: 100%;
-    margin: 0;
+   display: inline-block;
+   height: 100%;
+   margin: 0;
 }
 
 figure img{
-    height: 100%;
+   height: 100%;
 }
 
 header{   
-    display: flex;
-    align-items:center;
-    justify-content:space-between;
-    flex-wrap:wrap;
+   display: flex;
+   align-items:center;
+   justify-content:space-between;
+   flex-wrap:wrap;
 
-    height: 5em;
+   height: 3em;
 
-    padding: 0 2em;
-    margin-top: 1em;
-
-    margin-left: 18.75em;
+   padding: 0 2em;
+   margin-top: 1em;
 }
 
 header button{
-    padding-left:  2.5em;
-    padding-right: 2.5em;
-    background: var(--btn-gradient-blue);
+   padding-left:  2.5em;
+   padding-right: 2.5em;
+   background: var(--btn-gradient-blue);
 }
 
-
-/*MAIN - STYLES*/
 main{
-    margin-left: 18.75em;
-    padding: 0 2em;    
+   padding: 0 2em;    
 }
 
 /*TABLE - STYLES*/
 
 .tabla{
-    width: 100%;
-    overflow-x: scroll;
-    margin-bottom: 0.5em;
+   width: 100%;
+   overflow-x: scroll;
+   margin-bottom: 0.5em;
 }
 
 table{
-    background: var(--main-gradient);
-    height: 30em;
-    border-collapse: separate;
-    border-spacing: 1em 1em;
-    overflow-x: hidden !important;
-    width: 100%;
+   background: var(--main-gradient);
+   height: 30em;
+   border-collapse: separate;
+   border-spacing: 1em 1em;
+   overflow-x: hidden !important;
+   width: 100%;
 }
 
 table thead th{
-    background-color: white;
-    padding: 0.6em;
-    border-radius:0.6em;
-    box-shadow: 0em 0.15em  0.3em rgba(0, 0, 0, 0.30);
+   background-color: white;
+   padding: 0.6em;
+   border-radius:0.6em;
+   box-shadow: 0em 0.15em  0.3em rgba(0, 0, 0, 0.30);
 
-    font-weight: 600;
+   font-weight: 600;
 }
 
 tbody{
-    background-color: white;
-    margin: 3em;
+   background-color: white;
+   margin: 3em;
 }
 
 table tbody td{
-    border-radius: 0.6em;
-    text-align: center;
+   border-radius: 0.6em;
+   text-align: center;
 }
 
 table button{
-    padding:.5em 1em;
+   padding:.5em 1em;
 }
 
 table .btns-table button:nth-child(1){
-    background: var(--btn-gradient-green);
+   background: var(--btn-gradient-green);
 }
 
 table .btns-table button:nth-child(2){
-    background: var(--btn-gradient-red);
+   background: var(--btn-gradient-red);
 }
 
-
 .btn-new{
-    width: 100%;
-    text-align: right;
+   width: 100%;
+   text-align: right;
 }
 
 .btn-new button{
-    background: var(--btn-gradient-blue);
-    margin-bottom: 1em;
+   background: var(--btn-gradient-blue);
+   margin-bottom: 1em;
 }
 
 /*Scroll Styles*/
 .tabla::-webkit-scrollbar {
-    -webkit-appearance: none;
+   -webkit-appearance: none;
 }
 
 .tabla::-webkit-scrollbar:horizontal{
-    height:0.7em;
+   height:0.7em;
 }
 
 .tabla::-webkit-scrollbar-thumb {
-    background-color: var(--main-color);
-    border-radius: 20px;
+   background-color: var(--main-color);
+   border-radius: 20px;
 }
 
 @media only screen and (min-width : 481px) and (min-height: 321px) and (max-width:767px){
-    html{
-        font-size: 12px;
-    }
+   html{
+       font-size: 12px;
+   }
 }
 
 @media only screen and (min-width:768px) and (max-width:1034px){
-    html{
-        font-size: 14px;
-    }
+   html{
+       font-size: 14px;
+   }
 }
