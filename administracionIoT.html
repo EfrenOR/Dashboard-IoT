@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>DashboardIoT</title>
+   <link rel="stylesheet" href="./styles/Index.css">
+   <link rel="stylesheet" href="./styles/normalize.css">
+   <link rel="stylesheet" href="./styles/menuNavStyles.css">
+</head>
+
+<body>
+   <div class="menu"></div>
+
+   <section class="home-section">
+      <header>
+         <figure><img src="./img/Logo.png" alt="Logo"></figure>
+
+         <div class="btn-header">
+            <button>Opción 1</button>
+            <button>Opción 2</button>
+         </div>
+      </header>
+
+      <main>
+         <div class="container-main">
+            <h1>Dispositivos IoT</h1>
+
+            <div class="tabla">
+               <table>
+                  <thead>
+                     <tr>
+                        <th>Modelo ID</th>
+                        <th>Nombre</th>
+                        <th>Nombre Planta</th>
+                        <th>Variable Medida</th>
+                        <th>Acciones</th>
+                     </tr>
+                  </thead>
+
+                  <tbody>
+                     <tr>
+                        <td>8392</td>
+                        <td>Dispositivo IoT</td>
+                        <td>Nombre de Planta</td>
+                        <td>Variable que mide</td>
+                        <td>
+                           <div class="btns-table">
+                              <button>Actualizar</button>
+                              <button>Eliminar</button>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+
+                  <?php include 'Navbar.html'; ?>
+               </table>
+            </div>
+         </div>
+      </main>
+   </section>
+
+
+</body>
+
+<script>
+   //Insertar la Navbar
+   $(document).ready(function () {
+      $('.menu').load('./Navbar.html');
+   });
+</script>
+
+<script src="./script/Index.js"></script>
+
+</html>
