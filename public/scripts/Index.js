@@ -13,7 +13,6 @@ function a() {
       document.querySelector(".home-section").style.left = '18.75em';
       document.querySelector(".home-section").style.width = 'calc(100% - 18.75em)';
    }
+
+
 }
-
-
-
