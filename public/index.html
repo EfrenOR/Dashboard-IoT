@@ -9,6 +9,7 @@
    <title>DashboardIoT</title>
    <link rel="stylesheet" href="./styles/administracionIoT.css">
    <link rel="stylesheet" href="./styles/normalize.css">
+   <link rel="stylesheet" href="./styles/spinkit.css">
 </head>
 
 <body>
@@ -19,8 +20,60 @@
       <div class="header"></div>
 
       <main>
+
+         <div class="opacity"></div>
+
          <div class="container-main">
             <h1>Dispositivos IoT</h1>
+
+            <div class="form">
+               <form id="form-devices" action="">
+                  <div>
+                     <label for="">Nombre:</label><br>
+                     <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+                  </div>
+   
+                  <div>
+                     <label for="">Tipo:</label><br>
+                     <input type="text" name="tipo" id="tipo" placeholder="Tipo">
+                  </div>
+   
+                  <div>
+                     <label for="">Estado:</label><br>
+                     <input type="text" name="estado" id="estado" placeholder="Estado">
+                  </div>
+   
+                  <div>
+                     <label for="">Nombre Planta:</label><br>
+                     <input type="text" name="nombre_planta" id="nombre_planta" placeholder="Nombre Planta">
+                  </div>
+   
+                  <div>
+                     <label for="">Variable Medida:</label><br>
+                     <input type="text" name="variable_medida" id="variable_medida" placeholder="Variable Medida">
+                  </div>
+
+                  <input id="idDevice" type="hidden" value="">
+
+                  <div class="actions-container">
+                     <div class="actions">
+                        <button id="guardar" type="submit">Guardar</button>
+                        <button id="cancelar">Cerrar</button>
+                     </div>
+                     
+                     <div class="loader">
+                        <div class="sk-flow">
+                           <div class="sk-flow-dot"></div>
+                           <div class="sk-flow-dot"></div>
+                           <div class="sk-flow-dot"></div>
+                        </div>
+
+                        <p class="warn">Registro Agregado</p>
+                     </div>
+                  </div>
+
+               </form>
+            </div>
 
             <div class="tabla">
                <table>
@@ -28,6 +81,8 @@
                      <tr>
                         <th>Modelo ID</th>
                         <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Estado</th>
                         <th>Nombre Planta</th>
                         <th>Variable Medida</th>
                         <th>Acciones</th>
@@ -35,18 +90,7 @@
                   </thead>
 
                   <tbody>
-                     <tr>
-                        <td>8392</td>
-                        <td>Dispositivo IoT</td>
-                        <td>Nombre de Planta</td>
-                        <td>Variable que mide</td>
-                        <td>
-                           <div class="btns-table">
-                              <button>Actualizar</button>
-                              <button>Eliminar</button>
-                           </div>
-                        </td>
-                     </tr>
+
                   </tbody>
                </table>
             </div>
@@ -57,6 +101,22 @@
       </main>
    </section>
 
+   <template id="row-device">
+      <tr>
+         <td id="id"></td>
+         <td id="nombre"></td>
+         <td id="tipo"></td>
+         <td id="estado"></td>
+         <td id="nombre_planta"></td>
+         <td id="data_medida"></td>
+         <td>
+            <div class="btns-table">
+               <button class="actualizar" data-data>Actualizar</button>
+               <button class="eliminar" data-id>Eliminar</button>
+            </div>
+         </td>
+      </tr>
+   </template>
 
 </body>
 
@@ -73,5 +133,6 @@
 </script>
 
 <script src="./scripts/Index.js"></script>
+<script src="./scripts/crud_dispositivos_iot.js" type="module"></script>
 
 </html>
