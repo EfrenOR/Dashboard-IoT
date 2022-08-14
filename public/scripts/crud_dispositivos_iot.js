@@ -1,4 +1,10 @@
 import fetchAJAX from './fetch.js';
+import validations from './validations_css.js'
+import {signalToValidation} from './validations_css.js'
+
+
+validations();
+
 
 const $tabla = document.querySelector('.tabla'),
       $template = document.getElementById('row-device').content,
@@ -104,7 +110,9 @@ document.addEventListener('click', e=>{
 
 document.addEventListener('submit', e=>{
     if(e.target.matches('#form-devices')){
+
         e.preventDefault();
+
         const data = {
             nombre : e.target.querySelector('#nombre').value,
             tipo : e.target.querySelector('#tipo').value,
@@ -113,7 +121,7 @@ document.addEventListener('submit', e=>{
             variable_medida : e.target.querySelector('#variable_medida').value
         };
 
-        if(document.getElementById("idDevice").value === ""){
+        if(document.getElementById("idDevice").value === "" && signalToValidation){
             fetchAJAX({
                 url:`http://localhost:3000/insertdevice`,
                 settings : {
@@ -146,7 +154,7 @@ document.addEventListener('submit', e=>{
                     console.log(err)
                 }
             }) 
-        }else{
+        }else if(document.getElementById("idDevice").value !== "" && signalToValidation){
             fetchAJAX({
                 url:`http://localhost:3000/updatedevice/${document.getElementById("idDevice").value}`,
                 settings : {
@@ -180,8 +188,6 @@ document.addEventListener('submit', e=>{
                 }
             })
         }
-
-
-
+        
     }
 })

@@ -10,6 +10,7 @@
    <link rel="stylesheet" href="./styles/administracionIoT.css">
    <link rel="stylesheet" href="./styles/normalize.css">
    <link rel="stylesheet" href="./styles/spinkit.css">
+   <link rel="stylesheet" href="./styles/validations.css">
 </head>
 
 <body>
@@ -28,30 +29,33 @@
 
             <div class="form">
                <form id="form-devices" action="">
-                  <div>
+                  <div class="input-container">
                      <label for="">Nombre:</label><br>
-                     <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+                     <input data-validation = "required" type="text" name="nombre" id="nombre" placeholder="Nombre">
                   </div>
    
-                  <div>
+                  <div class="input-container">
                      <label for="">Tipo:</label><br>
-                     <input type="text" name="tipo" id="tipo" placeholder="Tipo">
+                     <input data-validation = "required" type="text" name="tipo" id="tipo" placeholder="Tipo">
                   </div>
    
-                  <div>
+                  <div class="input-container">
                      <label for="">Estado:</label><br>
-                     <input type="text" name="estado" id="estado" placeholder="Estado">
+                     <input data-validation = "required" type="text" name="estado" id="estado" placeholder="Estado">
                   </div>
    
-                  <div>
+                  <div class="input-container">
                      <label for="">Nombre Planta:</label><br>
-                     <input type="text" name="nombre_planta" id="nombre_planta" placeholder="Nombre Planta">
+                     <input data-validation = "required" type="text" name="nombre_planta" id="nombre_planta" placeholder="Nombre Planta">
                   </div>
    
-                  <div>
+                  <div class="input-container">
                      <label for="">Variable Medida:</label><br>
-                     <input type="text" name="variable_medida" id="variable_medida" placeholder="Variable Medida">
+                     <input data-validation = "required only-words" type="text" name="variable_medida" id="variable_medida" placeholder="Variable Medida">
                   </div>
+
+                  <div data-warn></div>
+
 
                   <input id="idDevice" type="hidden" value="">
 
