@@ -13,6 +13,11 @@
    box-sizing: border-box;
 }
 
+a{
+   text-decoration: none;
+   color : var(--main-text-color);
+}
+
 body{
    background-color: var(--main-bg-color);
    box-sizing: border-box;

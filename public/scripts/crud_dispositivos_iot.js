@@ -5,6 +5,7 @@ import {signalToValidation} from './validations_css.js'
 
 validations();
 
+let urlOrigin = location.origin;
 
 const $tabla = document.querySelector('.tabla'),
       $template = document.getElementById('row-device').content,
@@ -14,7 +15,7 @@ const $tabla = document.querySelector('.tabla'),
 const cargarTabla = ()=>{
     $tabla.querySelector('tbody').textContent = "";
     fetchAJAX({
-        url:'http://localhost:3000/selectdevices',
+        url:`${urlOrigin}/selectdevices`,
         resSuccess : (res)=>{
             
             res.result.forEach(el=>{
@@ -59,7 +60,7 @@ document.addEventListener('click', e=>{
     if(e.target.matches('.eliminar')){
 
         fetchAJAX({
-            url:`http://localhost:3000/deletedevice/${e.target.dataset.id}`,
+            url:`${urlOrigin}/deletedevice/${e.target.dataset.id}`,
             settings : {
                 method:'DELETE',
                 headers: {
@@ -123,7 +124,7 @@ document.addEventListener('submit', e=>{
 
         if(document.getElementById("idDevice").value === "" && signalToValidation){
             fetchAJAX({
-                url:`http://localhost:3000/insertdevice`,
+                url:`${urlOrigin}/insertdevice`,
                 settings : {
                     method:'POST',
                     headers : {
@@ -156,7 +157,7 @@ document.addEventListener('submit', e=>{
             }) 
         }else if(document.getElementById("idDevice").value !== "" && signalToValidation){
             fetchAJAX({
-                url:`http://localhost:3000/updatedevice/${document.getElementById("idDevice").value}`,
+                url:`${urlOrigin}/updatedevice/${document.getElementById("idDevice").value}`,
                 settings : {
                     method:'PUT',
                     headers : {
