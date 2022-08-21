@@ -1,7 +1,11 @@
 const _model = require('../models/dispositivos_iot.js');
+const _model_auth = require('../models/auth_model.js');
+
+const session = require('express-session'); 
 
 module.exports = {
     selectdevices:(req, res)=>{
+
         _model.methods.selectAll()
         .then(rows=>{
             res.send({
@@ -84,6 +88,34 @@ module.exports = {
             res.send({
                 success : false,
                 message: 'Error al actualizar el registro'
+            });
+        })
+    },
+
+    selectuserauth:(req, res)=>{
+        let data = {
+            nombre : req.body.nombre,
+            contrasena : req.body.contrasena,
+        }
+
+        console.log(data)
+        _model_auth.methods.selectUser(data)
+        .then(rows=>{
+            
+            req.session.nombre = data.nombre;
+
+            res.send({
+                success : true,
+                message: 'Usuario Autorizado'
+            });
+        })
+        .catch(err=>{
+
+            delete req.session.nombre;
+
+            res.send({
+                success : false,
+                message: 'Usuario o Contraseña Incorrectos'
             });
         })
     }
